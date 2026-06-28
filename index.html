@@ -396,8 +396,15 @@
 
     .gallery {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .gallery-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
     }
 
@@ -552,7 +559,8 @@
 
     /* ────────────────── MOBILE ────────────────── */
     @media (max-width: 768px) {
-      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .gallery { gap: 5px; }
+      .gallery-col { gap: 5px; }
     }
 
     @media (max-width: 560px) {
@@ -578,7 +586,8 @@
 
       .video-strip { height: 100svh; }
 
-      .gallery { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+      .gallery { gap: 5px; }
+      .gallery-col { gap: 5px; }
 
       .map-link { width: calc(100% - 40px); }
 
@@ -587,9 +596,6 @@
       .lb-nav { font-size: 1.8rem; padding: 8px 12px; }
     }
 
-    @media (max-width: 380px) {
-      .gallery { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 <body>
@@ -670,125 +676,7 @@
 
     <div class="divider"><span class="divider-icon">❧</span></div>
 
-    <div class="gallery" id="gallery">
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0013.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0060.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0061.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0062.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0071.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0081.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0083.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0087.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0093.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0094.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0095.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0096.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0104.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0105.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0108.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0109.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0112.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0113.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0118.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0119.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0120.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0121.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0170.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0190.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0192.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0209.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0218.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0219.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0232.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0240.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0241.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0242.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0245.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0246.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0251.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0257.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0261.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0265.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0267.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0268.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0269.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0274.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0275.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0276.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0280.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0287.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0288.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0289.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0297.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0308.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0309.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0312.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0314.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0317.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0319.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0332.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0335.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0337.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0338.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0339.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0342.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0351.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0352.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0362.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0368.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0372.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0375.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0376.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0377.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0421.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0424.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0426.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0429.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0435.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0439.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0441.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0445.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0446.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0448.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0453.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0454.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0461.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0474.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0475.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0476.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0477.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0478.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0480.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0487.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0490.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0491.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0495.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0503.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0504.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0505.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0511.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0529.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0545.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0546.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0547.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0548.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0571.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0572.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0573.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0574.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0575.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0576.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0577.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0578.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0579.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0581.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0588.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0591.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0599.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0604.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0605.jpg" loading="lazy" alt="" /></div>
-      <div class="gallery-item"><img src="assets/boda/Boda Clara y Juan0606.jpg" loading="lazy" alt="" /></div>
-    </div>
+    <div class="gallery" id="gallery"></div>
   </section>
 
   <!-- ── Lightbox ── -->
@@ -838,22 +726,172 @@
       }
     });
 
+    // Gallery photos in order
+    const photos = [
+      'assets/boda/Boda Clara y Juan0013.jpg',
+      'assets/boda/Boda Clara y Juan0060.jpg',
+      'assets/boda/Boda Clara y Juan0061.jpg',
+      'assets/boda/Boda Clara y Juan0062.jpg',
+      'assets/boda/Boda Clara y Juan0071.jpg',
+      'assets/boda/Boda Clara y Juan0081.jpg',
+      'assets/boda/Boda Clara y Juan0083.jpg',
+      'assets/boda/Boda Clara y Juan0087.jpg',
+      'assets/boda/Boda Clara y Juan0093.jpg',
+      'assets/boda/Boda Clara y Juan0094.jpg',
+      'assets/boda/Boda Clara y Juan0095.jpg',
+      'assets/boda/Boda Clara y Juan0096.jpg',
+      'assets/boda/Boda Clara y Juan0104.jpg',
+      'assets/boda/Boda Clara y Juan0105.jpg',
+      'assets/boda/Boda Clara y Juan0108.jpg',
+      'assets/boda/Boda Clara y Juan0109.jpg',
+      'assets/boda/Boda Clara y Juan0112.jpg',
+      'assets/boda/Boda Clara y Juan0113.jpg',
+      'assets/boda/Boda Clara y Juan0118.jpg',
+      'assets/boda/Boda Clara y Juan0119.jpg',
+      'assets/boda/Boda Clara y Juan0120.jpg',
+      'assets/boda/Boda Clara y Juan0121.jpg',
+      'assets/boda/Boda Clara y Juan0170.jpg',
+      'assets/boda/Boda Clara y Juan0190.jpg',
+      'assets/boda/Boda Clara y Juan0192.jpg',
+      'assets/boda/Boda Clara y Juan0209.jpg',
+      'assets/boda/Boda Clara y Juan0218.jpg',
+      'assets/boda/Boda Clara y Juan0219.jpg',
+      'assets/boda/Boda Clara y Juan0232.jpg',
+      'assets/boda/Boda Clara y Juan0240.jpg',
+      'assets/boda/Boda Clara y Juan0241.jpg',
+      'assets/boda/Boda Clara y Juan0242.jpg',
+      'assets/boda/Boda Clara y Juan0245.jpg',
+      'assets/boda/Boda Clara y Juan0246.jpg',
+      'assets/boda/Boda Clara y Juan0251.jpg',
+      'assets/boda/Boda Clara y Juan0257.jpg',
+      'assets/boda/Boda Clara y Juan0261.jpg',
+      'assets/boda/Boda Clara y Juan0265.jpg',
+      'assets/boda/Boda Clara y Juan0267.jpg',
+      'assets/boda/Boda Clara y Juan0268.jpg',
+      'assets/boda/Boda Clara y Juan0269.jpg',
+      'assets/boda/Boda Clara y Juan0274.jpg',
+      'assets/boda/Boda Clara y Juan0275.jpg',
+      'assets/boda/Boda Clara y Juan0276.jpg',
+      'assets/boda/Boda Clara y Juan0280.jpg',
+      'assets/boda/Boda Clara y Juan0287.jpg',
+      'assets/boda/Boda Clara y Juan0288.jpg',
+      'assets/boda/Boda Clara y Juan0289.jpg',
+      'assets/boda/Boda Clara y Juan0297.jpg',
+      'assets/boda/Boda Clara y Juan0308.jpg',
+      'assets/boda/Boda Clara y Juan0309.jpg',
+      'assets/boda/Boda Clara y Juan0312.jpg',
+      'assets/boda/Boda Clara y Juan0314.jpg',
+      'assets/boda/Boda Clara y Juan0317.jpg',
+      'assets/boda/Boda Clara y Juan0319.jpg',
+      'assets/boda/Boda Clara y Juan0332.jpg',
+      'assets/boda/Boda Clara y Juan0335.jpg',
+      'assets/boda/Boda Clara y Juan0337.jpg',
+      'assets/boda/Boda Clara y Juan0338.jpg',
+      'assets/boda/Boda Clara y Juan0339.jpg',
+      'assets/boda/Boda Clara y Juan0342.jpg',
+      'assets/boda/Boda Clara y Juan0351.jpg',
+      'assets/boda/Boda Clara y Juan0352.jpg',
+      'assets/boda/Boda Clara y Juan0362.jpg',
+      'assets/boda/Boda Clara y Juan0368.jpg',
+      'assets/boda/Boda Clara y Juan0372.jpg',
+      'assets/boda/Boda Clara y Juan0375.jpg',
+      'assets/boda/Boda Clara y Juan0376.jpg',
+      'assets/boda/Boda Clara y Juan0377.jpg',
+      'assets/boda/Boda Clara y Juan0421.jpg',
+      'assets/boda/Boda Clara y Juan0424.jpg',
+      'assets/boda/Boda Clara y Juan0426.jpg',
+      'assets/boda/Boda Clara y Juan0429.jpg',
+      'assets/boda/Boda Clara y Juan0435.jpg',
+      'assets/boda/Boda Clara y Juan0439.jpg',
+      'assets/boda/Boda Clara y Juan0441.jpg',
+      'assets/boda/Boda Clara y Juan0445.jpg',
+      'assets/boda/Boda Clara y Juan0446.jpg',
+      'assets/boda/Boda Clara y Juan0448.jpg',
+      'assets/boda/Boda Clara y Juan0453.jpg',
+      'assets/boda/Boda Clara y Juan0454.jpg',
+      'assets/boda/Boda Clara y Juan0461.jpg',
+      'assets/boda/Boda Clara y Juan0474.jpg',
+      'assets/boda/Boda Clara y Juan0475.jpg',
+      'assets/boda/Boda Clara y Juan0476.jpg',
+      'assets/boda/Boda Clara y Juan0477.jpg',
+      'assets/boda/Boda Clara y Juan0478.jpg',
+      'assets/boda/Boda Clara y Juan0480.jpg',
+      'assets/boda/Boda Clara y Juan0487.jpg',
+      'assets/boda/Boda Clara y Juan0490.jpg',
+      'assets/boda/Boda Clara y Juan0491.jpg',
+      'assets/boda/Boda Clara y Juan0495.jpg',
+      'assets/boda/Boda Clara y Juan0503.jpg',
+      'assets/boda/Boda Clara y Juan0504.jpg',
+      'assets/boda/Boda Clara y Juan0505.jpg',
+      'assets/boda/Boda Clara y Juan0511.jpg',
+      'assets/boda/Boda Clara y Juan0529.jpg',
+      'assets/boda/Boda Clara y Juan0545.jpg',
+      'assets/boda/Boda Clara y Juan0546.jpg',
+      'assets/boda/Boda Clara y Juan0547.jpg',
+      'assets/boda/Boda Clara y Juan0548.jpg',
+      'assets/boda/Boda Clara y Juan0571.jpg',
+      'assets/boda/Boda Clara y Juan0572.jpg',
+      'assets/boda/Boda Clara y Juan0573.jpg',
+      'assets/boda/Boda Clara y Juan0574.jpg',
+      'assets/boda/Boda Clara y Juan0575.jpg',
+      'assets/boda/Boda Clara y Juan0576.jpg',
+      'assets/boda/Boda Clara y Juan0577.jpg',
+      'assets/boda/Boda Clara y Juan0578.jpg',
+      'assets/boda/Boda Clara y Juan0579.jpg',
+      'assets/boda/Boda Clara y Juan0581.jpg',
+      'assets/boda/Boda Clara y Juan0588.jpg',
+      'assets/boda/Boda Clara y Juan0591.jpg',
+      'assets/boda/Boda Clara y Juan0599.jpg',
+      'assets/boda/Boda Clara y Juan0604.jpg',
+      'assets/boda/Boda Clara y Juan0605.jpg',
+      'assets/boda/Boda Clara y Juan0606.jpg',
+    ];
+
+    // Build masonry gallery with left-to-right visual order
+    function buildGallery() {
+      const galleryEl = document.getElementById('gallery');
+      const numCols = window.innerWidth <= 560 ? 2 : 3;
+      galleryEl.innerHTML = '';
+
+      const cols = Array.from({ length: numCols }, () => {
+        const col = document.createElement('div');
+        col.className = 'gallery-col';
+        galleryEl.appendChild(col);
+        return col;
+      });
+
+      // Round-robin: photo 0→col0, 1→col1, 2→col2, 3→col0 ...
+      // This makes the visual order left-to-right row by row
+      photos.forEach((src, i) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.dataset.index = i;
+        const img = document.createElement('img');
+        img.src = src;
+        img.loading = 'lazy';
+        img.alt = '';
+        item.appendChild(img);
+        cols[i % numCols].appendChild(item);
+        item.addEventListener('click', () => openLightbox(i));
+      });
+    }
+
+    buildGallery();
+    window.addEventListener('resize', buildGallery);
+
     // Lightbox
-    const gallery   = document.getElementById('gallery');
     const lightbox  = document.getElementById('lightbox');
     const lbImg     = document.getElementById('lb-img');
     const lbCounter = document.getElementById('lb-counter');
     const lbClose   = document.getElementById('lb-close');
     const lbPrev    = document.getElementById('lb-prev');
     const lbNext    = document.getElementById('lb-next');
-
-    const items = Array.from(gallery.querySelectorAll('.gallery-item img'));
     let current = 0;
 
     function openLightbox(index) {
       current = index;
-      lbImg.src = items[current].src;
-      lbCounter.textContent = (current + 1) + ' / ' + items.length;
+      lbImg.src = photos[current];
+      lbCounter.textContent = (current + 1) + ' / ' + photos.length;
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -864,20 +902,16 @@
     }
 
     function showPrev() {
-      current = (current - 1 + items.length) % items.length;
-      lbImg.src = items[current].src;
-      lbCounter.textContent = (current + 1) + ' / ' + items.length;
+      current = (current - 1 + photos.length) % photos.length;
+      lbImg.src = photos[current];
+      lbCounter.textContent = (current + 1) + ' / ' + photos.length;
     }
 
     function showNext() {
-      current = (current + 1) % items.length;
-      lbImg.src = items[current].src;
-      lbCounter.textContent = (current + 1) + ' / ' + items.length;
+      current = (current + 1) % photos.length;
+      lbImg.src = photos[current];
+      lbCounter.textContent = (current + 1) + ' / ' + photos.length;
     }
-
-    items.forEach((img, i) => {
-      img.parentElement.addEventListener('click', () => openLightbox(i));
-    });
 
     lbClose.addEventListener('click', closeLightbox);
     lbPrev.addEventListener('click', showPrev);
