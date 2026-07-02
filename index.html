@@ -649,7 +649,8 @@
 
     <div class="video-embed-wrap">
       <iframe
-        src="https://www.youtube.com/embed/IBGLb70HdAg"
+        id="yt-player"
+        src="https://www.youtube.com/embed/IBGLb70HdAg?enablejsapi=1"
         title="Vídeo de la boda de Clara y Juan"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
@@ -692,6 +693,21 @@
     <span class="icon-pause">■</span>
   </button>
 
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    function onYouTubeIframeAPIReady() {
+      new YT.Player('yt-player', {
+        events: {
+          onStateChange(e) {
+            if (e.data === YT.PlayerState.PLAYING) {
+              audio.pause();
+              musicBtn.classList.remove('playing');
+            }
+          }
+        }
+      });
+    }
+  </script>
   <script>
     // Splash + music
     const audio     = document.getElementById('bg-music');
