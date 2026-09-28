@@ -409,10 +409,12 @@
     }
 
     .gallery-item {
-      position: relative;
       cursor: pointer;
       overflow: hidden;
       border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
     }
 
     .gallery-item img {
@@ -427,27 +429,28 @@
     }
 
     .photo-download {
-      position: absolute;
-      right: 8px;
-      bottom: 8px;
-      z-index: 2;
-      width: 36px;
-      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(26, 20, 16, .62);
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      border-radius: 50%;
+      gap: 6px;
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 8px;
+      background: var(--gold);
+      color: #fff;
       text-decoration: none;
-      transition: background .2s, color .2s;
+      font-family: 'Lato', sans-serif;
+      font-size: .72rem;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: background .2s;
     }
 
     .photo-download:hover,
     .photo-download:active,
     .photo-download:focus-visible {
-      background: var(--gold);
+      background: #a07d38;
       color: #fff;
       outline: none;
     }
@@ -475,7 +478,7 @@
 
     .lightbox img {
       max-width: 90vw;
-      max-height: 88vh;
+      max-height: calc(100vh - 150px);
       object-fit: contain;
       display: block;
       border-radius: 2px;
@@ -516,7 +519,7 @@
 
     .lb-counter {
       position: absolute;
-      bottom: 20px;
+      bottom: 84px;
       left: 50%;
       transform: translateX(-50%);
       font-size: .65rem;
@@ -527,29 +530,34 @@
 
     .lb-download {
       position: absolute;
-      top: 22px;
-      left: 24px;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
       z-index: 2;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 22px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
+      justify-content: center;
+      gap: 10px;
+      min-width: min(320px, calc(100vw - 48px));
+      min-height: 52px;
+      padding: 14px 28px;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 2px;
       text-decoration: none;
       font-family: 'Lato', sans-serif;
-      font-size: .7rem;
-      letter-spacing: .22em;
+      font-size: .85rem;
+      font-weight: 400;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      border-radius: 2px;
-      transition: background .2s, color .2s;
+      box-shadow: 0 6px 24px rgba(0,0,0,.35);
+      transition: background .2s;
     }
 
     .lb-download:hover,
     .lb-download:active,
     .lb-download:focus-visible {
-      background: var(--gold);
+      background: #a07d38;
       color: #fff;
       outline: none;
     }
@@ -651,15 +659,22 @@
 
       .lb-nav { font-size: 1.8rem; padding: 8px 12px; }
 
-      .photo-download { width: 32px; height: 32px; right: 6px; bottom: 6px; }
+      .photo-download {
+        min-height: 40px;
+        gap: 4px;
+        font-size: .62rem;
+        letter-spacing: .08em;
+        padding: 8px 4px;
+      }
 
       .lb-download {
-        top: 14px;
-        left: 12px;
-        padding: 10px 14px;
+        min-width: calc(100vw - 32px);
+        bottom: 16px;
+        font-size: .8rem;
         letter-spacing: .14em;
-        font-size: .62rem;
       }
+
+      .lb-counter { bottom: 78px; }
     }
 
   </style>
@@ -738,9 +753,9 @@
 
   <!-- ── Lightbox ── -->
   <div class="lightbox" id="lightbox">
-    <a class="lb-download" id="lb-download" href="" download aria-label="Descargar foto">
-      <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 3h2v9.17l2.59-2.58L17 11l-5 5-5-5 1.41-1.41L11 12.17V3zM5 19h14v2H5z"/></svg>
-      Descargar
+    <a class="lb-download" id="lb-download" href="" download aria-label="Descargar esta foto">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 3h2v9.17l2.59-2.58L17 11l-5 5-5-5 1.41-1.41L11 12.17V3zM5 19h14v2H5z"/></svg>
+      Descargar foto
     </a>
     <button class="lb-close" id="lb-close" aria-label="Cerrar">✕</button>
     <button class="lb-nav lb-prev" id="lb-prev" aria-label="Anterior">‹</button>
@@ -958,9 +973,8 @@
         download.className = 'photo-download';
         download.href = encodeURI(src);
         download.download = src.split('/').pop();
-        download.setAttribute('aria-label', 'Descargar foto');
-        download.title = 'Descargar';
-        download.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 3h2v9.17l2.59-2.58L17 11l-5 5-5-5 1.41-1.41L11 12.17V3zM5 19h14v2H5z"/></svg>';
+        download.setAttribute('aria-label', 'Descargar esta foto');
+        download.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 3h2v9.17l2.59-2.58L17 11l-5 5-5-5 1.41-1.41L11 12.17V3zM5 19h14v2H5z"/></svg><span>Descargar</span>';
         download.addEventListener('click', (e) => e.stopPropagation());
         item.appendChild(img);
         item.appendChild(download);
