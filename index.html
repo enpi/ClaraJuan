@@ -412,9 +412,6 @@
       cursor: pointer;
       overflow: hidden;
       border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      background: #fff;
     }
 
     .gallery-item img {
@@ -426,33 +423,6 @@
     .gallery-item:hover img {
       transform: scale(1.03);
       opacity: .9;
-    }
-
-    .photo-download {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      width: 100%;
-      min-height: 44px;
-      padding: 10px 8px;
-      background: var(--gold);
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Lato', sans-serif;
-      font-size: .72rem;
-      font-weight: 400;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      transition: background .2s;
-    }
-
-    .photo-download:hover,
-    .photo-download:active,
-    .photo-download:focus-visible {
-      background: #a07d38;
-      color: #fff;
-      outline: none;
     }
 
     /* ────────────────── LIGHTBOX ────────────────── */
@@ -658,14 +628,6 @@
       .music-btn { bottom: 20px; right: 20px; width: 46px; height: 46px; font-size: 1.1rem; }
 
       .lb-nav { font-size: 1.8rem; padding: 8px 12px; }
-
-      .photo-download {
-        min-height: 40px;
-        gap: 4px;
-        font-size: .62rem;
-        letter-spacing: .08em;
-        padding: 8px 4px;
-      }
 
       .lb-download {
         min-width: calc(100vw - 32px);
@@ -969,15 +931,7 @@
         img.src = src;
         img.loading = 'lazy';
         img.alt = '';
-        const download = document.createElement('a');
-        download.className = 'photo-download';
-        download.href = encodeURI(src);
-        download.download = src.split('/').pop();
-        download.setAttribute('aria-label', 'Descargar esta foto');
-        download.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 3h2v9.17l2.59-2.58L17 11l-5 5-5-5 1.41-1.41L11 12.17V3zM5 19h14v2H5z"/></svg><span>Descargar</span>';
-        download.addEventListener('click', (e) => e.stopPropagation());
         item.appendChild(img);
-        item.appendChild(download);
         cols[i % numCols].appendChild(item);
         item.addEventListener('click', () => openLightbox(i));
       });
